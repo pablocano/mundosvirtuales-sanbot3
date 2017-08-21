@@ -1,20 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
     tools:context="com.example.pablocano.sanbotsensors.SensorsViewer">
 
-    <GridView
-        android:id="@+id/sensorsGridView"
-        android:layout_width="fill_parent"
+    <ImageView
+        android:src="@drawable/ir_sensors"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:columnWidth="90dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"/>
+        android:contentDescription="@string/image_description"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/selected_sensor"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:imeOptions="actionGo"/>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="@string/select_button"
+                android:onClick="selectSensor"
+                android:id="@+id/select_button" />
+
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/sensorsGridView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="120dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
 
 </LinearLayout>
