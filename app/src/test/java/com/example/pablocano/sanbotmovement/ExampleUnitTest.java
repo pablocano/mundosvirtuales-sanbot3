@@ -1,4 +1,4 @@
-package com.example.pablocano.sanbotsensors;
+package com.example.pablocano.sanbotmovement;
 
 import org.junit.Test;
 

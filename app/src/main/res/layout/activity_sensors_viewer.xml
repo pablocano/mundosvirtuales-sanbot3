@@ -5,157 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    tools:context="com.example.pablocano.sanbotsensors.SensorsViewer">
-
-    <ImageView
-        android:src="@drawable/ir_sensors"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/image_description"/>
-
+    tools:context="com.example.pablocano.sanbotmovement.MovementActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <EditText
-                android:id="@+id/sensor_selector"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:inputType="numberDecimal"
-                android:textAlignment="center"
-                android:imeOptions="actionGo"/>
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:text="@string/select_button"
-                android:onClick="selectSensor"
-                android:id="@+id/select_button" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/selected_sensor"
-                android:textSize="30sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/colorAccent"
-                android:id="@+id/selected_sensor"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance"
-                android:textSize="25sp"/>
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textColor="@color/colorAccent"
-                android:id="@+id/sensor_value"
-                android:textAlignment="textEnd"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/measurement_unit"
-                android:textSize="25sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:gravity="center">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:gravity="center">
-                <Button
-                    android:id="@+id/analysis_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:text="@string/start_button"
-                    android:textSize="40sp"
-                    android:onClick="startAnalysis"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/n_samples"
-                        android:textSize="25sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="25sp"
-                        android:textColor="@color/colorAccent"
-                        android:id="@+id/n_samples_value"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mean"
-                        android:textSize="25sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="25sp"
-                        android:textColor="@color/colorAccent"
-                        android:id="@+id/mean_value"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/std"
-                        android:textSize="25sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="25sp"
-                        android:textColor="@color/colorAccent"
-                        android:id="@+id/std_value"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textSize="80sp"
+            android:text="@string/start_button"
+            android:onClick="start"/>
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textSize="80sp"
+            android:text="@string/stop_button"
+            android:onClick="stop"/>
     </LinearLayout>
-
-
-
 </LinearLayout>

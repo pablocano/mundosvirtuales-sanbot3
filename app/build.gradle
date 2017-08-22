@@ -4,7 +4,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.3'
     defaultConfig {
-        applicationId "com.example.pablocano.sanbotsensors"
+        applicationId "com.example.pablocano.sanbotmovement"
         minSdkVersion 19
         targetSdkVersion 19
         versionCode 1
