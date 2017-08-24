@@ -1,13 +1,63 @@
 <resources>
-    <string name="app_name">SanbotSensors</string>
-    <string name="select_button">Select</string>
-    <string name="image_description">Index of all the IR sensors present in Sanbot</string>
-    <string name="distance">Distance: </string>
-    <string name="measurement_unit"> cms.</string>
-    <string name="selected_sensor">Sensor: </string>
+    <string name="app_name">SanbotMovement</string>
     <string name="start_button">Start</string>
     <string name="stop_button">Stop</string>
-    <string name="n_samples">N. of samples: </string>
-    <string name="mean">Mean: </string>
-    <string name="std">Std: </string>
+
+    <string name="movementType1">No Angle Wheel Motion</string>
+    <string name="movementType2">Relative Angle Rotation Control</string>
+    <string name="movementType3">Distance Control</string>
+
+
+    <string name="nAWM_prompt">Choose Action</string>
+    <string-array name="nAWM_array">
+        <item>ACTION_FORWARD_RUN</item>
+        <item>ACTION_BACK_RUN</item>
+        <item>ACTION_LEFT_CIRCLE</item>
+        <item>ACTION_RIGHT_CIRCLE</item>
+        <item>ACTION_LEFT_FORWARD_RUN</item>
+        <item>ACTION_RIGHT_FORWARD_RUN</item>
+        <item>ACTION_LEFT_BACK_RUN</item>
+        <item>ACTION_RIGHT_BACK_RUN</item>
+        <item>ACTION_TURN_LEFT</item>
+        <item>ACTION_TURN_RIGHT</item>
+        <item>ACTION_STOP_TURN</item>
+        <item>ACTION_STOP_RUN</item>
+    </string-array>
+
+    <string name="nAWM_velocity_prompt">Choose Velocity</string>
+    <string-array name="nAWM_velocity_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>0</item>
+    </string-array>
+
+    <string name="rAWM_prompt">Choose Action</string>
+    <string-array name="rAWM_array">
+        <item>TURN_LEFT</item>
+        <item>TURN_RIGHT</item>
+        <item>TURN_STOP</item>
+    </string-array>
+
+    <string name="dWM_prompt">Choose Action</string>
+    <string-array name="dWM_array">
+        <item>ACTION_FORWARD_RUN</item>
+        <item>ACTION_BACK_RUN</item>
+        <item>ACTION_LEFT_FORWARD_RUN</item>
+        <item>ACTION_RIGHT_FORWARD_RUN</item>
+        <item>ACTION_LEFT_BACK_RUN</item>
+        <item>ACTION_RIGHT_BACK_RUN</item>
+        <item>ACTION_STOP_RUN</item>
+    </string-array>
+
+    <string name="distance_hint">Distance</string>
+    <string name="duration_hint">Duration</string>
+    <string name="angle_hint">Angle</string>
 </resources>

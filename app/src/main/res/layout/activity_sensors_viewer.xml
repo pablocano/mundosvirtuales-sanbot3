@@ -3,28 +3,210 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:gravity="center"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
     tools:context="com.example.pablocano.sanbotmovement.MovementActivity">
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="@string/movementType1"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/zigbee_height">
+                <Spinner
+                    android:id="@+id/nAWM_Action_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:prompt="@string/nAWM_prompt"
+                    android:entries="@array/nAWM_array"
+                    android:spinnerMode="dropdown"/>
+                <Spinner
+                    android:id="@+id/nAWM_Velocity_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:prompt="@string/nAWM_velocity_prompt"
+                    android:entries="@array/nAWM_velocity_array"/>
+                <EditText
+                    android:id="@+id/nAWM_edit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/duration_hint"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionGo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
         <Button
-            android:id="@+id/start_button"
-            android:layout_width="0dp"
+            android:id="@+id/nAWM_start"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:textSize="80sp"
             android:text="@string/start_button"
-            android:onClick="start"/>
+            android:layout_toStartOf="@+id/nAWM_stop"
+            android:onClick="startNAWM"/>
         <Button
-            android:id="@+id/stop_button"
-            android:layout_width="0dp"
+            android:id="@+id/nAWM_stop"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:textSize="80sp"
             android:text="@string/stop_button"
-            android:onClick="stop"/>
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:onClick="stopNAWM"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="@string/movementType2"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/zigbee_height">
+                <Spinner
+                    android:id="@+id/rAWM_Action_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:prompt="@string/rAWM_prompt"
+                    android:entries="@array/rAWM_array"
+                    android:spinnerMode="dropdown"/>
+                <Spinner
+                    android:id="@+id/rAWM_Velocity_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:prompt="@string/nAWM_velocity_prompt"
+                    android:entries="@array/nAWM_velocity_array"/>
+                <EditText
+                    android:id="@+id/rAWM_edit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/angle_hint"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionGo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/rAWM_start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/start_button"
+            android:layout_toStartOf="@+id/rAWM_stop"
+            android:onClick="startRAWM"
+            />
+        <Button
+            android:id="@+id/rAWM_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/stop_button"
+            android:layout_alignParentEnd="true"
+            android:onClick="stopRAWM"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="@string/movementType3"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/zigbee_height">
+
+                <Spinner
+                    android:id="@+id/dWM_Action_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:entries="@array/dWM_array"
+                    android:prompt="@string/dWM_prompt"
+                    android:spinnerMode="dropdown" />
+
+                <Spinner
+                    android:id="@+id/dWM_Velocity_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:entries="@array/nAWM_velocity_array"
+                    android:prompt="@string/nAWM_velocity_prompt"
+                    android:spinnerMode="dropdown" />
+
+                <EditText
+                    android:id="@+id/dWM_edit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/distance_hint"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionGo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/dWM_start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/start_button"
+            android:layout_toStartOf="@+id/dWM_stop"
+            android:onClick="startDWM"
+            />
+        <Button
+            android:id="@+id/dWM_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/stop_button"
+            android:layout_alignParentEnd="true"
+            android:onClick="stopDWM"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
 </LinearLayout>
